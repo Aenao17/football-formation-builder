@@ -69,11 +69,8 @@ Every change to the `formation` attribute automatically and fluidly rearranges t
 
 Because this is a native Web Component, it has zero dependencies. You do not need npm packages or complex build setups to use it.
 
-### Step 1: Copy the Component File
+### 1. Copy the Component File
 Simply copy the FootballFormation.js file from the src/web-components/ directory and place it anywhere in your own project.
-
-### 1. Usage in Vanilla HTML / JavaScript
-Include the component script in the page and use the custom tag directly in your HTML code.
 
 ### 2. Import the Component
 Import the file in your HTML or JavaScript entry point to register the custom element with the browser.
