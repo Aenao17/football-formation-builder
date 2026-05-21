@@ -84,6 +84,8 @@ import './path/to/FootballFormation.js';
 ### 3. Use the HTML Tag
 Once imported, the  tag is registered and ready to be used just like a standard HTML tag.
 
+---
+
 ## Component API reference
 
 | Attribute | Type   | Example                                                                                                                                                                                                                                  | Description                                                                                                                                                                                                      |
@@ -91,6 +93,8 @@ Once imported, the  tag is registered and ready to be used just like a standard 
 | formation | String | 4-3-3                                                                                                                                                                                                                                    | Defines the tactical layout. Supported values are: 4-3-3, 4-4-2, 4-2-3-1, and 3-5-2. If you change this attribute dynamically, the component will automatically rearrange the players to match the new system.   |
 | team-name | String | Real Madrid                                                                                                                                                                                                                              | Sets the name of the team to be displayed on or alongside the tactics board.                                                                                                                                     |
 | players | String (JSON)| JSON.stringify(players) | A stringified JSON array or object containing the specific data for each player (e.g., name, shirt number, id). Because HTML attributes only accept strings, complex data must be passed using JSON.stringify(). |
+
+--
 
 ## Integration examples
 ### 1. Vanilla HTML / JavaScript Integration
@@ -210,7 +214,6 @@ function App() {
 
 export default App;
 ```
-
 ---
 
 # Project Structure
