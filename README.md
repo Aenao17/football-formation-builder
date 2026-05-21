@@ -1,4 +1,4 @@
-# ⚽ Football Formation Builder
+# Football Formation Builder
 
 **Football Formation Builder** is an interactive and reusable Web Component designed for rendering football tactical formations in modern web applications.
 
@@ -18,7 +18,7 @@ The resulting component is completely independent and can be easily reused in:
 
 ---
 
-## 🎯 Project Goals
+## Project Goals
 
 The main purpose of the project is to explore and demonstrate modern frontend component architecture concepts:
 * **Reusable Web Components:** Creating custom elements that work anywhere, without external dependencies.
@@ -30,7 +30,7 @@ The main purpose of the project is to explore and demonstrate modern frontend co
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 The project is built exclusively on modern web standards and fast development tools:
 * **JavaScript:** Dynamic component logic and DOM manipulation.
@@ -42,7 +42,7 @@ The project is built exclusively on modern web standards and fast development to
 
 ---
 
-## ✨ Main Features
+## Main Features
 
 * **Interactive Tactics Board:** Rendering a modern football pitch inspired by professional sports analysis applications.
 * **Dynamic Formation Rendering:** Instant repositioning of players on the pitch based on the selected formation.
@@ -53,7 +53,7 @@ The project is built exclusively on modern web standards and fast development to
 
 ---
 
-## 📋 Supported Tactical Formations
+## Supported Tactical Formations
 
 The component calculates the coordinates of each player and translates them into percentages/positions on the pitch for the following systems:
 * **4-3-3** (Balanced system, based on possession and wingers)
@@ -65,7 +65,7 @@ Every change to the `formation` attribute automatically and fluidly rearranges t
 
 ---
 
-## 🚀 Usage and Integration Guide
+## Usage and Integration Guide
 
 ### 1. Usage in Vanilla HTML / JavaScript
 Include the component script in the page and use the custom tag directly in your HTML code.
