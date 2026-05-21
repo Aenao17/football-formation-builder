@@ -1,0 +1,158 @@
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+  background: #0b1120;
+  font-family: Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+
+  background:
+          radial-gradient(
+                  circle at top,
+                  rgba(46, 125, 50, 0.25),
+                  transparent 40%
+          ),
+          linear-gradient(
+                  180deg,
+                  #0f172a 0%,
+                  #111827 45%,
+                  #0b1120 100%
+          );
+
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+
+  overflow: hidden;
+}
+
+.app-title {
+  color: white;
+
+  font-size: clamp(32px, 5vw, 56px);
+
+  font-weight: 900;
+
+  margin: 0;
+
+  text-align: center;
+
+  letter-spacing: 1px;
+
+  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+.formation-select {
+  padding: 14px 20px;
+
+  border-radius: 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: white;
+
+  backdrop-filter: blur(12px);
+
+  font-size: 16px;
+  font-weight: 700;
+
+  outline: none;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+
+  cursor: pointer;
+
+  transition:
+          transform 0.2s ease,
+          background 0.2s ease;
+}
+
+.formation-select:hover {
+  transform: translateY(-2px);
+
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.formation-select option {
+  background: #111827;
+  color: white;
+}
+
+.selected-player-card {
+  color: white;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  padding: 16px 24px;
+
+  border-radius: 18px;
+
+  font-weight: 700;
+
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+  text-align: center;
+
+  animation: fadeIn 0.25s ease;
+}
+
+.selected-player-card span {
+  color: #ffd54f;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding: 24px 12px;
+    gap: 18px;
+  }
+
+  .app-title {
+    line-height: 1.1;
+  }
+
+  .formation-select {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .selected-player-card {
+    width: 100%;
+    max-width: 320px;
+  }
+}
