@@ -104,6 +104,10 @@ Include the component script in the page and use the custom tag directly in your
 </body>
 </html>
 ```
+
+### 2. Usage in a framework
+App example, integrated in React.
+
 ---
 
 # Project Structure
