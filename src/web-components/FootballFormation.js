@@ -239,7 +239,7 @@ class FootballFormation extends HTMLElement {
                     border-radius: 50%;
                     border: clamp(2px, 0.6vw, 4px) solid #0f3d17;
                     background: #ffffff;
-                    color: #1b5e20;
+                    color: #000000;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
