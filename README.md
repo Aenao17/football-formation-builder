@@ -91,7 +91,7 @@ Once imported, the  tag is registered and ready to be used just like a standard 
 | team-name | String | Real Madrid                                                                                                                                                                                                                              | Sets the name of the team to be displayed on or alongside the tactics board.                                                                                                                                     |
 | players | String (JSON)| JSON.stringify(players) | A stringified JSON array or object containing the specific data for each player (e.g., name, shirt number, id). Because HTML attributes only accept strings, complex data must be passed using JSON.stringify(). |
 
---
+---
 
 ## Integration examples
 ### 1. Vanilla HTML / JavaScript Integration
