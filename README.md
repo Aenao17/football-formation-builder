@@ -65,10 +65,36 @@ Every change to the `formation` attribute automatically and fluidly rearranges t
 
 ---
 
-## Usage and Integration Guide
+## How to Use the Component in Your Project
+
+Because this is a native Web Component, it has zero dependencies. You do not need npm packages or complex build setups to use it.
+
+### Step 1: Copy the Component File
+Simply copy the FootballFormation.js file from the src/web-components/ directory and place it anywhere in your own project.
 
 ### 1. Usage in Vanilla HTML / JavaScript
 Include the component script in the page and use the custom tag directly in your HTML code.
+
+### 2. Import the Component
+Import the file in your HTML or JavaScript entry point to register the custom element with the browser.
+```javascript
+import './path/to/FootballFormation.js';
+```
+
+### 3. Use the HTML Tag
+Once imported, the  tag is registered and ready to be used just like a standard HTML tag.
+
+## Component API reference
+
+| Attribute | Type   | Example                                                                                                                                                                                                                                  | Description                                                                                                                                                                                                      |
+| ----------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| formation | String | 4-3-3                                                                                                                                                                                                                                    | Defines the tactical layout. Supported values are: 4-3-3, 4-4-2, 4-2-3-1, and 3-5-2. If you change this attribute dynamically, the component will automatically rearrange the players to match the new system.   |
+| team-name | String | Real Madrid                                                                                                                                                                                                                              | Sets the name of the team to be displayed on or alongside the tactics board.                                                                                                                                     |
+| players | String (JSON)| JSON.stringify(players) | A stringified JSON array or object containing the specific data for each player (e.g., name, shirt number, id). Because HTML attributes only accept strings, complex data must be passed using JSON.stringify(). |
+
+## Integration examples
+### 1. Vanilla HTML / JavaScript Integration
+Use the component directly in a basic HTML file.
 
 ```html
 <!DOCTYPE html>
@@ -106,7 +132,84 @@ Include the component script in the page and use the custom tag directly in your
 ```
 
 ### 2. Usage in a framework
-App example, integrated in React.
+Because it is a native HTML element, you can use it inside a React or Angular component. You just need to use a ref to attach the custom event listener.
+
+```javascript
+import { useEffect, useRef, useState } from "react";
+import "./web-components/FootballFormation";
+import "./App.css";
+
+function App() {
+  const [formation, setFormation] = useState("4-3-3");
+  const [selectedPlayer, setSelectedPlayer] = useState(null);
+
+  const formationRef = useRef(null);
+
+  const players = [
+    "Courtois",
+    "Mendy",
+    "Rüdiger",
+    "Militão",
+    "Carvajal",
+    "Bellingham",
+    "Tchouaméni",
+    "Valverde",
+    "Vinícius",
+    "Mbappé",
+    "Rodrygo",
+  ];
+
+  useEffect(() => {
+    const element = formationRef.current;
+
+    const handlePlayerSelected = (event) => {
+      setSelectedPlayer(event.detail);
+    };
+
+    element.addEventListener("player-selected", handlePlayerSelected);
+
+    return () => {
+      element.removeEventListener("player-selected", handlePlayerSelected);
+    };
+  }, []);
+
+  return (
+      <div className="app">
+        <h1 className="app-title">Football Formation Builder</h1>
+
+        <select
+            className="formation-select"
+            value={formation}
+            onChange={(event) => {
+              setFormation(event.target.value);
+              setSelectedPlayer(null);
+            }}
+        >
+          <option value="4-3-3">4-3-3</option>
+          <option value="4-4-2">4-4-2</option>
+          <option value="4-2-3-1">4-2-3-1</option>
+          <option value="3-5-2">3-5-2</option>
+        </select>
+
+        {selectedPlayer && (
+            <div className="selected-player-card">
+              Selected player:{" "}
+              <span>{selectedPlayer.name}</span> — {selectedPlayer.position}
+            </div>
+        )}
+
+        <football-formation
+            ref={formationRef}
+            formation={formation}
+            team-name="Real Madrid"
+            players={JSON.stringify(players)}
+        ></football-formation>
+      </div>
+  );
+}
+
+export default App;
+```
 
 ---
 
